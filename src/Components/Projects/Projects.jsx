@@ -1,9 +1,19 @@
 import { AiFillGithub } from "react-icons/ai";
 import { CgDetailsMore } from "react-icons/cg";
-import { FaLocationArrow } from "react-icons/fa";
+import { MdLiveTv } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Projects = ({ image, title, subTitle, year, role, link1, link2 }) => {
+const Projects = ({ project }) => {
+  const {
+    id,
+    project_name,
+    description,
+    image,
+    year,
+    role,
+    live_link,
+    repo_link,
+  } = project;
   return (
     <div className="flex items-center gap-8 mb-8">
       <div className="w-1/2 bg-[#e2eff95e]  py-14 px-6 rounded-xl">
@@ -11,8 +21,8 @@ const Projects = ({ image, title, subTitle, year, role, link1, link2 }) => {
       </div>
       <div className="w-1/2">
         <div className="space-y-2 mb-2">
-          <h2 className="text-2xl font-semibold ">{title}</h2>
-          <p className="text-[#87909D]">{subTitle}</p>
+          <h2 className="text-2xl font-semibold ">{project_name}</h2>
+          <p className="text-[#87909D]">{description.slice(0,100)}....</p>
         </div>
         <div>
           <h4 className="text-lg font-semibold">Project Info</h4>
@@ -31,14 +41,14 @@ const Projects = ({ image, title, subTitle, year, role, link1, link2 }) => {
 
         <div className="flex items-center gap-6">
           <Link
-            to={link1}
+            to={live_link}
             className="font-semibold text-[#A53DFF] flex items-center gap-[4px] link"
           >
             Live Demo
-            <FaLocationArrow></FaLocationArrow>
+            <MdLiveTv></MdLiveTv>
           </Link>
           <Link
-            to={link2}
+            to={repo_link}
             className="font-semibold text-[#A53DFF] flex items-center gap-[4px] link"
           >
             GitHub Repo
@@ -46,10 +56,11 @@ const Projects = ({ image, title, subTitle, year, role, link1, link2 }) => {
           </Link>
         </div>
         <div className="mt-3">
-          <button className="bg-[#A53DFF] text-white px-4 py-2 rounded-md flex items-center gap-2 font-semibold hover:bg-[#333333] hover:text-[#ddd] hover:transition-colors hover:duration-500">
-            View Details{" "}
-            <CgDetailsMore className="text-xl"></CgDetailsMore>
-          </button>
+          <Link to={`/viewDetails/${id}`}>
+            <button className="bg-[#A53DFF] text-white px-4 py-2 rounded-md flex items-center gap-2 font-semibold hover:bg-[#333333] hover:text-[#ddd] hover:transition-colors hover:duration-500">
+              View Details <CgDetailsMore className="text-xl"></CgDetailsMore>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
