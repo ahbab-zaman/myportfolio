@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "bebus": ["Bebas Neue", "serif"],
+        "inter": ["Inter", "serif"],
       },
     },
   },

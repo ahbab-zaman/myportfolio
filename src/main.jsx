@@ -6,7 +6,7 @@ import router from "./Routes/router";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div className="font-bebus">
+    <div className="font-inter">
       <RouterProvider router={router}></RouterProvider>
     </div>
   </StrictMode>
