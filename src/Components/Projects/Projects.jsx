@@ -15,11 +15,11 @@ const Projects = ({ project }) => {
     repo_link,
   } = project;
   return (
-    <div className="flex items-center gap-8 mb-8">
-      <div className="w-1/2 bg-[#e2eff95e]  py-14 px-6 rounded-xl">
+    <div className="flex lg:flex-row flex-col items-center gap-8 mb-8">
+      <div className="lg:w-1/2 w-full bg-[#e2eff95e]  py-14 px-6 rounded-xl">
         <img className="w-full rounded-xl" src={image} alt="cover-photo" />
       </div>
-      <div className="w-1/2">
+      <div className="lg:w-1/2 w-full">
         <div className="space-y-2 mb-2">
           <h2 className="text-2xl font-semibold ">{project_name}</h2>
           <p className="text-[#87909D]">{description.slice(0,100)}....</p>

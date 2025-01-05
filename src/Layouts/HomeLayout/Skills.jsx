@@ -4,12 +4,12 @@ const Skills = () => {
   return (
     <div className="w-11/12 mx-auto">
       <TitleSection title={"skills"}></TitleSection>
-      <div className="py-6 ">
-        <h2 className="text-[#87909D] mb-3 w-5/6">
+      <div className="">
+        <h2 className="text-[#87909D] w-5/6 mx-auto text-center">
           I am always looking for new technology. Now I am still learning web
           development. These are my current skills based on my learning and beginner experience
         </h2>
-        <div className="flex items-center gap-3 flex-wrap w-1/2">
+        <div className="flex justify-start items-center gap-3 flex-wrap lg:w-1/2 w-full mx-auto my-6">
           <span className="flex items-center justify-center gap-1 text-lg font-semibold border rounded-full p-2 w-28 hover:border hover:border-black hover:transition-all hover:duration-300 cursor-pointer">
             HTML{" "}
             <img
