@@ -47,27 +47,27 @@ const Navbar = () => {
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 space-x-4">
           <li>
-            <NavLink
+            <NavLink to="/"
               className={({ isActive }) =>
-                isActive ? "text-[#333333] font-bold" : "text-black"
+                isActive ? "text-[#A53DFF] font-bold underline" : "text-black"
               }
             >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink
+            <NavLink to="/about"
               className={({ isActive }) =>
-                isActive ? "text-[#333333] font-bold" : "text-black"
+                isActive ? "text-[#A53DFF] font-bold underline" : "text-black"
               }
             >
               About
             </NavLink>
           </li>
           <li>
-            <NavLink
+            <NavLink to="/contact"
               className={({ isActive }) =>
-                isActive ? "text-[#333333] font-bold" : "text-black"
+                isActive ? "text-[#A53DFF] font-bold underline" : "text-black"
               }
             >
               Contact

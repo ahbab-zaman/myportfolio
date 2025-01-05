@@ -5,10 +5,10 @@ import github from "../../assets/gh.png";
 import { Link } from "react-router-dom";
 const Banner = () => {
   return (
-    <div className="bg-gradient-to-r from-[#fff] to-[#f9cefea6] py-6">
+    <div className="bg-gradient-to-r from-[#fff] to-[#f9cefea6] pt-6">
       <div className="hero w-11/12 mx-auto">
         <div className="hero-content flex-col lg:flex-row-reverse ">
-          <div className="relative ">
+          <div className="relative">
             <img src={bannerImg} className="max-w-sm rounded-lg shadow-2xl" />
             <div className="absolute w-3/4 mx-auto left-14 rounded-xl -bottom-4 bg-[#F0F1F3] p-3 flex justify-around items-center shadow-xl">
               <Link to="https://www.facebook.com/profile.php?id=100015172482884&mibextid=ZbWKwL">
