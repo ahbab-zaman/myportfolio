@@ -3,8 +3,28 @@ import TitleSection from "../../Components/TitleSection/TitleSection";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { FaPhone } from "react-icons/fa";
 import { TbLocationFilled } from "react-icons/tb";
-
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 const Contact = () => {
+  const form = useRef();
+
+  const handleSendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_qmo3ais", "template_3o42yf8", form.current, {
+        publicKey: "cyXF2OtdeMME4QePo",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <div className="py-12">
       <TitleSection title="let's contact"></TitleSection>
@@ -45,38 +65,46 @@ const Contact = () => {
         </div>
         <div className="lg:w-1/2 w-full space-y-2">
           <h3 className="font-semibold">Send me your details:</h3>
-          <label className="form-control w-full">
-            <input
-              type="text"
-              placeholder="Enter Your Name"
-              className="bg-gray-100 p-3 rounded-lg w-full"
-            />
-            <div className="label"></div>
-          </label>
+          <form ref={form} onSubmit={handleSendEmail}>
+            <label className="form-control w-full">
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter Your Name"
+                className="bg-gray-100 p-3 rounded-lg w-full"
+              />
+              <div className="label"></div>
+            </label>
 
-          <label className="form-control mt-3 w-full">
-            <input
-              type="email"
-              placeholder="Enter Your Email"
-              className="bg-gray-100 p-3 rounded-lg w-full"
-            />
-            <div className="label"></div>
-          </label>
+            <label className="form-control mt-3 w-full">
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Your Email"
+                className="bg-gray-100 p-3 rounded-lg w-full"
+              />
+              <div className="label"></div>
+            </label>
 
-          <label className="form-control mt-3 w-full">
-            <input
-              type="text"
-              placeholder="Subject"
-              className="bg-gray-100 p-3 rounded-lg w-full"
-            />
-            <div className="label"></div>
-          </label>
+            <label className="form-control mt-3 w-full">
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                className="bg-gray-100 p-3 rounded-lg w-full"
+              />
+              <div className="label"></div>
+            </label>
 
-          <textarea
-            className="textarea textarea-accent w-full resize-none border-none bg-gray-100 p-3 rounded-lg"
-            placeholder="Message"
-          ></textarea>
-          <button className="flex items-center gap-2 bg-[#A53DFF] px-4 py-2 text-white rounded-xl font-semibold">Submit <TbLocationFilled></TbLocationFilled></button>
+            <textarea
+              className="textarea textarea-accent w-full resize-none border-none bg-gray-100 p-3 rounded-lg"
+              placeholder="Message"
+              name="message"
+            ></textarea>
+            <button className="flex items-center gap-2 bg-[#A53DFF] px-4 py-2 text-white rounded-xl font-semibold">
+              Submit <TbLocationFilled></TbLocationFilled>
+            </button>
+          </form>
         </div>
       </div>
     </div>
